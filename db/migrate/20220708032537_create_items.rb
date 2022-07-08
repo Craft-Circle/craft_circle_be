@@ -5,8 +5,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :type
       t.string :description
       t.boolean :available
-      t.integer :quantity
-      t.integer :exchange_status
+      t.integer :amount
+      t.integer :status
       t.references :user, foreign_key: true
 
       t.timestamps

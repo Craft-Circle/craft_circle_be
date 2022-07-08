@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2022_07_08_032537) do
     t.string "type"
     t.string "description"
     t.boolean "available"
-    t.integer "quantity"
-    t.integer "exchange_status"
+    t.integer "amount"
+    t.integer "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -68,7 +68,7 @@ jobs:
       # Run rspec in parallel
       - run:
           name: RSPEC tests
-          command: bundle exec rspec
+          command: bundle exec rspe
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:

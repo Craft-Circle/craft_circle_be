@@ -26,6 +26,5 @@ RSpec.describe Item, type: :model do
       status: 0,
       user_id: phillip.id
     )
-    binding.pry
   end
 end

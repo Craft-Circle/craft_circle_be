@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_032537) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.integer "category"
     t.string "description"
     t.boolean "available"
     t.integer "amount"

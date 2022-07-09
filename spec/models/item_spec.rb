@@ -10,7 +10,7 @@ RSpec.describe Item, type: :model do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:available) }
     it { should validate_presence_of(:status) }
-    it { should validate_presence_of(:type) }
+    it { should validate_presence_of(:category) }
     it { should validate_numericality_of(:amount) }
     it { should validate_inclusion_of(:available).in?([true, false]) }
   end

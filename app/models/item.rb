@@ -11,7 +11,7 @@ class Item < ApplicationRecord
     'Trade' => 2
   }
 
-  enum type: {
+  enum category: {
     'Sewing/Knitting' => 0,
     'Paper' =>	1,
     'Jewelry' => 2,

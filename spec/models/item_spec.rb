@@ -14,4 +14,18 @@ RSpec.describe Item, type: :model do
     it { should validate_numericality_of(:amount) }
     it { should validate_inclusion_of(:available).in?([true, false]) }
   end
+
+  describe 'item creation' do
+    phillip = User.new(name: 'Phillip', email: 'phillip@email.com')
+    yarn = Item.new(
+      name: 'Purple Yarn',
+      category: 0,
+      description: '.8 gauge purple yarn, 1 bundle',
+      available: true,
+      amount: 1,
+      status: 0,
+      user_id: phillip.id
+    )
+    binding.pry
+  end
 end

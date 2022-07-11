@@ -2,11 +2,11 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       t.string :name
-      t.string :type
+      t.integer :category
       t.string :description
       t.boolean :available
-      t.integer :quantity
-      t.integer :exchange_status
+      t.integer :amount
+      t.integer :status
       t.references :user, foreign_key: true
 
       t.timestamps

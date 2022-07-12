@@ -80,7 +80,7 @@ GEM
       railties
       sprockets-rails
     graphql (2.0.11)
-    i18n (1.10.0)
+    i18n (1.11.0)
       concurrent-ruby (~> 1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -95,18 +95,10 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.16.2)
     msgpack (1.5.3)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
-    nokogiri (1.13.6-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
+    nokogiri (1.13.7-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.1)
     pry (0.14.1)
@@ -197,14 +189,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  arm64-darwin-21
-  ruby
-  x86_64-darwin-20
-<<<<<<< HEAD
   x86_64-darwin-21
-=======
-  x86_64-linux
->>>>>>> 4c5636364606a6ed778bcc9285228211673cccff
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)

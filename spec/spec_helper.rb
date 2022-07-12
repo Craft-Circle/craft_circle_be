@@ -18,6 +18,7 @@ SimpleCov.start do
   add_filter "app/controllers"
   add_filter "app/serializers"
   add_filter "spec"
+  add_filter "config/routes"
 end
 
 RSpec.configure do |config|

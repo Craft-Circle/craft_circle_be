@@ -8,6 +8,6 @@ module Types
     # item mutations
     field :create_item, mutation: Mutations::CreateItem
     field :edit_item, mutation: Mutations::EditItem
-    # field :delete_item, mutation: Mutations::DeleteItem
+    field :delete_item, mutation: Mutations::DeleteItem
   end
 end

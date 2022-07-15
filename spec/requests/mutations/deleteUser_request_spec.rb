@@ -40,4 +40,5 @@ RSpec.describe 'deleteUser', type: :request do
     error = json[:errors][0]
     expect(error[:message]).to eq("User with ID 0 could not be found or doesn't exist")
   end
+
 end

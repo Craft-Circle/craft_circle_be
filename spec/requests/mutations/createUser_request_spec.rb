@@ -27,20 +27,39 @@ RSpec.describe 'createUser', type: :request do
       email: "one@email.com"
     )
     error_mutation =
-      <<~GQL
-        mutation createUser {
-            createUser(input:{name: "User one", email: "one@email.com"}) {
-              user {
-                name
-                email
-              }
+    <<~GQL
+      mutation createUser {
+          createUser(input:{name: "User one", email: "one@email.com"}) {
+            user {
+              name
+              email
             }
           }
-      GQL
-      post '/graphql', params: { query: error_mutation }
-      json = JSON.parse(response.body, symbolize_names: true)
-      error = json[:errors][0]
+        }
+    GQL
+    post '/graphql', params: { query: error_mutation }
+    json = JSON.parse(response.body, symbolize_names: true)
+    error = json[:errors][0]
 
-      expect(error[:message]).to eq("#{user_1.email} is already associated with another account. Your email must be unique.")
+    expect(error[:message]).to eq("#{user_1.email} is already associated with another account. Your email must be unique.")
+  end
+
+  it "fails gracefully when a user does not enter an email or name" do
+    error_mutation =
+    <<~GQL
+      mutation createUser {
+          createUser(input:{name: "", email: ""}) {
+            user {
+              name
+              email
+            }
+          }
+        }
+    GQL
+    post '/graphql', params: { query: error_mutation }
+    json = JSON.parse(response.body, symbolize_names: true)
+    error = json[:errors][0]
+
+    expect(error[:message]).to eq("Name and email must not be left blank.")
   end
 end

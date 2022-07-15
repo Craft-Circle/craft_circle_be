@@ -8,6 +8,7 @@ module Mutations
     argument :status, Integer, required: false
     argument :user_id, ID, required: false
     field :item, Types::ItemType, null: false
+    field :user, Types::UserType, null: false
 
     def resolve(**args)
       new_item = Item.create!(args)

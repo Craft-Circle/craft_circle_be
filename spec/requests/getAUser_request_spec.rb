@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'getAUser', type: :request do
   it 'returns a user based on id' do
     @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com')
-    def query(id:)
+    def query(email:)
       <<~GQL
         query {
           getAUser(
-            id: #{@bojack.id}
+            email: "#{@bojack.email}"
           ) {
             id
             name
@@ -16,8 +16,9 @@ RSpec.describe 'getAUser', type: :request do
         }
       GQL
     end
-    post '/graphql', params: { query: query(id: @bojack.id) }
+    post '/graphql', params: { query: query(email: @bojack.email) }
     json = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
     data = json[:data][:getAUser]
 
     expect(data[:name]).to eq @bojack.name

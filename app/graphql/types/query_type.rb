@@ -15,10 +15,10 @@ module Types
     end
 
     field :get_a_user, Types::UserType, null: false, description: 'Returns a user' do
-      argument :id, ID, required: true
+      argument :email, String, required: true
     end
-    def get_a_user(id:)
-      User.find(id)
+    def get_a_user(email:)
+      User.where(email: email)
     end
 
     field :get_items, [Types::ItemType], null: false, description: 'Returns all items'

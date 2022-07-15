@@ -50,6 +50,10 @@ RSpec.describe 'getItems', type: :request do
             available
             category
             status
+            user {
+              id
+              name
+            }
           }
         }
       GQL

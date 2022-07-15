@@ -25,4 +25,19 @@ RSpec.describe 'deleteUser', type: :request do
     expect(json[:data][:deleteUser][:success]).to be true
     expect(User.all.empty?).to be true
   end
+
+  it "fails gracefully when a user cannot be found" do
+    error_mutation =
+      <<~GQL
+        mutation deleteUser {
+            deleteUser(input:{id: 0}) {
+              success
+            }
+          }
+      GQL
+    post '/graphql', params: { query: error_mutation }
+    json = JSON.parse(response.body, symbolize_names: true)
+    error = json[:errors][0]
+    expect(error[:message]).to eq("User with ID 0 could not be found or doesn't exist")
+  end
 end

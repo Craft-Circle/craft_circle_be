@@ -18,7 +18,7 @@ module Types
       argument :email, String, required: true
     end
     def get_a_user(email:)
-      User.where(email: email)
+      User.where(email: "#{email}").first
     end
 
     field :get_items, [Types::ItemType], null: false, description: 'Returns all items'

@@ -95,12 +95,10 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.16.2)
     msgpack (1.5.3)
     nio4r (2.5.8)
-    nokogiri (1.13.7)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.7-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.7-x86_64-darwin)
       racc (~> 1.4)
@@ -114,6 +112,8 @@ GEM
     puma (3.12.6)
     racc (1.6.0)
     rack (2.2.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (5.2.8)
@@ -195,7 +195,8 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
+  x86_64-darwin-20
   x86_64-darwin-21
   x86_64-linux
 
@@ -212,6 +213,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.8)
   rspec-rails
   rspec_junit_formatter
@@ -225,4 +227,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.17
+   2.3.11

@@ -18,7 +18,6 @@ RSpec.describe 'getAUser', type: :request do
     end
     post '/graphql', params: { query: query(email: @bojack.email) }
     json = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
     data = json[:data][:getAUser]
 
     expect(data[:name]).to eq @bojack.name

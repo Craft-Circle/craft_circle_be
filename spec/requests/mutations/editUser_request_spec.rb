@@ -38,29 +38,6 @@ RSpec.describe 'editUser', type: :request do
     expect(edited_user.email).to eq("one@email.com")
   end
 
-  it "returns an error when the user cannot be found" do
-    error_mutation =
-    <<~GQL
-      mutation createUser {
-          editUser(input:{id: 0, name: "Edited user name"}) {
-            user {
-              name
-              email
-            }
-          }
-        }
-    GQL
-
-    post '/graphql', params: { query: error_mutation }
-
-    json = JSON.parse(response.body, symbolize_names: true)
-
-    error = json[:errors][0]
-
-
-    expect(error[:message]).to eq("User with ID 0 could not be found or doesn't exist")
-  end
-
   it "returns an error when the updated email is already associated with another account" do
     user_1 = User.create!(
       name: "User 1",

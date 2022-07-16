@@ -15,9 +15,6 @@ module Mutations
       else
         raise GraphQL::ExecutionError.new("#{args[:email]} is already associated with another account. Your email must be unique.")
       end
-
-    rescue ActiveRecord::RecordNotFound => error
-      GraphQL::ExecutionError.new("User with ID #{id} could not be found or doesn't exist")
     end
   end
 end

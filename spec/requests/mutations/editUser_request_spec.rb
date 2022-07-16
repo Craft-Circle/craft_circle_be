@@ -27,7 +27,6 @@ RSpec.describe 'editUser', type: :request do
 
     post '/graphql', params: { query: editer_mutation }
     json = JSON.parse(response.body, symbolize_names: true)
-
     edited_user = User.find(test_user.id)
 
     expect(json[:data][:editUser][:user][:name]).to eq("Edited user name")

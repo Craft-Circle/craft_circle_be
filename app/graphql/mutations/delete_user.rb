@@ -10,9 +10,6 @@ module Mutations
       else
         {success: false}
       end
-
-    rescue ActiveRecord::RecordNotFound => error
-      GraphQL::ExecutionError.new("User with ID #{id} could not be found or doesn't exist")
     end
   end
 end

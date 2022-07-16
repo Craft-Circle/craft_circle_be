@@ -13,7 +13,12 @@ module Mutations
     def resolve(id:, **args)
       updated_item = Item.find(id)
       updated_item.update(args)
-      { item: updated_item } if updated_item.save
+      if updated_item.save
+        { item: updated_item }
+      else
+        raise GraphQL::ExecutionError,
+              'Item update failed. Ensure desired fields are not blank and have correct data types.'
+      end
     end
   end
 end

@@ -4,8 +4,7 @@ module Mutations
     argument :name, String, required: false
     argument :email, String, required: false
     field :user, Types::UserType
-    field :error, String
-
+    
     def resolve(id:, **args)
       updated_user = User.find(id)
 

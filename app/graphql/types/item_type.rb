@@ -6,7 +6,7 @@ module Types
     field :name, String, null: false
     field :category, String, null: false
     field :description, String, null: false
-    field :available, Boolean, null: false
+    field :available, String, null: false
     field :amount, Integer, null: false
     field :status, String, null: false
     field :user, Types::UserType, null: false

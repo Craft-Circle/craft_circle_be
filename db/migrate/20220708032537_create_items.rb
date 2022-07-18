@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :category
       t.string :description
-      t.boolean :available
+      t.integer :available
       t.integer :amount
       t.integer :status
       t.references :user, foreign_key: true

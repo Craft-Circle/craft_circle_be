@@ -12,7 +12,7 @@ RSpec.describe 'createItem', type: :request do
                 name: "Magical Chisels",
                 category: 7,
                 description: "They're magical!",
-                available: true,
+                available: 1,
                 amount: 9,
                 status: 0
                 }) {
@@ -39,7 +39,7 @@ RSpec.describe 'createItem', type: :request do
     expect(Item.last.id.to_s).to eq(data[:id])
     expect(Item.last.name).to eq('Magical Chisels')
     expect(Item.last.category).to eq('Wood Working')
-    expect(Item.last.available).to eq(true)
+    expect(Item.last.available).to eq('true')
     expect(Item.last.amount).to eq(9)
     expect(Item.last.status).to eq('Give')
     expect(Item.last.user.id).to eq(@bojack.id)

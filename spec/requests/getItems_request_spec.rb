@@ -8,7 +8,7 @@ RSpec.describe 'getItems', type: :request do
       name: 'Purple Yarn',
       category: 0,
       description: '.8 gauge purple yarn, 1 bundle',
-      available: true,
+      available: 1,
       amount: 1,
       status: 0,
       user_id: @bojack.id
@@ -17,7 +17,7 @@ RSpec.describe 'getItems', type: :request do
       name: 'Dixon Ticonderoga',
       category: 6,
       description: 'The best pencil known to humankind',
-      available: true,
+      available: 1,
       amount: 1,
       status: 0,
       user_id: @bojack.id
@@ -26,7 +26,7 @@ RSpec.describe 'getItems', type: :request do
       name: 'Multicolored Construction Paper',
       category: 1,
       description: 'THICC paper',
-      available: true,
+      available: 1,
       amount: 5,
       status: 0,
       user_id: @bojack.id
@@ -35,7 +35,7 @@ RSpec.describe 'getItems', type: :request do
       name: 'VeryFine Pottery Wheel',
       category: 8,
       description: 'A very fine wheel',
-      available: true,
+      available: 1,
       amount: 1,
       status: 1,
       user_id: @bojack.id

@@ -7,7 +7,7 @@ RSpec.describe 'editItem', type: :request do
       name: 'Purple Yarn',
       category: 0,
       description: '.8 gauge purple yarn, 1 bundle',
-      available: true,
+      available: 0,
       amount: 1,
       status: 0
     )
@@ -21,7 +21,7 @@ RSpec.describe 'editItem', type: :request do
                 name: "Magical Yarn",
                 category: 0,
                 description: "They're magical!",
-                available: true,
+                available: 0,
                 amount: 3,
                 status: 1
                 }) {

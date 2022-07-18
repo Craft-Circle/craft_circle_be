@@ -7,7 +7,7 @@ RSpec.describe 'createItem', type: :request do
       name: 'Purple Yarn',
       category: 0,
       description: '.8 gauge purple yarn, 1 bundle',
-      available: true,
+      available: 0,
       amount: 1,
       status: 0
     )

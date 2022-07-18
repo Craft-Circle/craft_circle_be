@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_032537) do
     t.string "name"
     t.integer "category"
     t.string "description"
-    t.boolean "available"
+    t.integer "available"
     t.integer "amount"
     t.integer "status"
     t.bigint "user_id"

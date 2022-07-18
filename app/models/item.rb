@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
 
-  validates_presence_of :name, :description, :available, :category, :status, :available
+  validates_presence_of :name, :description, :available, :category, :status
   validates_numericality_of :amount
 
   enum status: {

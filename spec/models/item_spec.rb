@@ -11,8 +11,8 @@ RSpec.describe Item do
     it { should validate_presence_of(:available) }
     it { should validate_presence_of(:status) }
     it { should validate_presence_of(:category) }
+    it { should validate_presence_of(:available) }
     it { should validate_numericality_of(:amount) }
-    it { should validate_inclusion_of(:available).in?([true, false]) }
   end
 
   describe 'item creation' do
@@ -21,7 +21,7 @@ RSpec.describe Item do
       name: 'Purple Yarn',
       category: 0,
       description: '.8 gauge purple yarn, 1 bundle',
-      available: true,
+      available: 1,
       amount: 1,
       status: 0,
       user_id: phillip.id

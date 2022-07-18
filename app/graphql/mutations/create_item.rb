@@ -3,7 +3,7 @@ module Mutations
     argument :name, String, required: false
     argument :category, Integer, required: false
     argument :description, String, required: false
-    argument :available, Boolean, required: false
+    argument :available, Integer, required: false
     argument :amount, Integer, required: false
     argument :status, Integer, required: false
     argument :user_id, ID, required: false

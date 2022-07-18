@@ -1,9 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
 
-  validates_presence_of :name, :description, :available, :category, :status
+  validates_presence_of :name, :description, :available, :category, :status, :available
   validates_numericality_of :amount
-  validates :available, inclusion: { in: [true, false] }
 
   enum status: {
     'Give' => 0,
@@ -22,5 +21,10 @@ class Item < ApplicationRecord
     'Wood Working' => 7,
     'Pottery' => 8,
     'Other' => 9
+  }
+
+  enum available: {
+    'false' => 0,
+    'true' => 1
   }
 end

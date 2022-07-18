@@ -9,7 +9,7 @@ RSpec.describe 'getUserItems', type: :request do
       name: 'Purple Yarn',
       category: 0,
       description: '.8 gauge purple yarn, 1 bundle',
-      available: true,
+      available: 1,
       amount: 1,
       status: 0
     )
@@ -18,7 +18,7 @@ RSpec.describe 'getUserItems', type: :request do
       name: 'Dixon Ticonderoga',
       category: 6,
       description: 'The best pencil known to humankind',
-      available: true,
+      available: 1,
       amount: 1,
       status: 0
     )
@@ -27,7 +27,7 @@ RSpec.describe 'getUserItems', type: :request do
       name: 'Multicolored Construction Paper',
       category: 1,
       description: 'THICC paper',
-      available: true,
+      available: 1,
       amount: 5,
       status: 0
     )
@@ -45,15 +45,15 @@ RSpec.describe 'getUserItems', type: :request do
           }
         }
       GQL
-    
+
     post '/graphql', params: { query: query }
     json = JSON.parse(response.body, symbolize_names: true)
     data = json[:data][:getUserItems]
 
     expect(data).to be_a(Array)
     expect(data.count).to eq(2)
-    expect(data[0][:name]).to eq("Purple Yarn")
-    expect(data[1][:name]).to eq("Dixon Ticonderoga")
-    expect(data[0][:name]).to_not eq("Multicolored Construction Paper")
+    expect(data[0][:name]).to eq('Purple Yarn')
+    expect(data[1][:name]).to eq('Dixon Ticonderoga')
+    expect(data[0][:name]).to_not eq('Multicolored Construction Paper')
   end
 end

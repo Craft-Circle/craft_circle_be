@@ -53,7 +53,9 @@
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 - [faraday](https://github.com/lostisland/faraday)
 - [figaro](https://github.com/laserlemon/figaro)
-- [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer)
+- [graphql](https://graphql.org/learn/)
+- [graphql-ruby docs](https://graphql-ruby.org/guides)
+- [graphiql-rails](https://github.com/graphql/graphiql)
 - [jsonl](https://github.com/zenizh/jsonl)
 - [launchy](https://github.com/copiousfreetime/launchy)
 - [pry](https://github.com/pry/pry)
@@ -68,7 +70,24 @@ See this [Rails Setup Guide](./docs/setup/rails_setup.md) for detailed instructi
 ## **Heroku Setup**
 See this [Heroku Deployment Guide](./docs/setup/heroku_setup.md) for detailed instructions on how to deploy the app to heroku.
 ## **GraphQL Endpoints**
+Our GraphQL endpoints fall into two categories: queries and mutations. For detailed examples of all the endpoints and example responses, see our [GraphQL #Endpoints Guide](./docs/graphql) or click the specific query or mutation below to go its section.
 
+To make live queries to the GraphQL endpoint and see live schema information, setup the back-end using the [rails setup guide](./docs/setup/rails_setup.md) and access GraphiQL at `http://localhost:5000/graphiql`.
+
+- Queries
+  - [getUsers](./docs/graphql/queries.md#get-users)
+  - [getAUser](./docs/graphql/queries.md#get-user)
+  - [getUserItems](./docs/graphql/queries.md#get-user-items)
+  - [getItems](./docs/graphql/queries.md#get-items)
+  - [itemSearch](graphql_endpoints.md#item-search)
+  - [filterByCategory](graphql_endpoints.md#filter-by-category)
+- Mutations
+  - [createUser](./docs/graphql/mutations.md#create-user)
+  - [editUser](./docs/graphql/mutations.md#edit-user)
+  - [deleteUser](./docs/graphql/mutations.md#delete-user)
+  - [createItem](./docs/graphql/mutations.md#create-pairings)
+  - [editItem](./docs/graphql/mutations.md#update-pairings)
+  - [deleteItem](./docs/graphql/mutations.md#delete-pairing)
 
 ## **Contributors ✨**
 

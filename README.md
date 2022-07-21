@@ -1,4 +1,4 @@
-#**Craft Circle BE**
+# **Craft Circle BE**
 
 ![languages](https://img.shields.io/github/languages/top/Craft-Circle/craft_circle_be?color=red)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)

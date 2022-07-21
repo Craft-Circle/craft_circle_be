@@ -1,10 +1,10 @@
 ## Mutations
-### [User Mutations](#user)
+### [User Mutations](#user-m)
 - [createUser](#create-user)
 - [editUser](#edit-user)
 - [deleteUser](#delete-user)
 
-### [Item Mutations](#item)
+### [Item Mutations](#item-m)
 - [createItem](#create-item)
 - [editItem](#edit-item)
 - [deleteItem](#delete-item)
@@ -12,9 +12,9 @@
 
 <br>
 
-### <a id="user">User Mutations</a><br>
+### <a id="user-m">User Mutations</a><br>
 <a id="create-user">**createUser**</a><br>
-*Used during profile creation. Will create a new user in the database*
+*Used during profile creation. Will create a new `User` in the database*
 * Example Mutation
 ```graph
 mutation {
@@ -51,7 +51,7 @@ mutation {
 <br>
 
 <a id="edit-user">**editUser**</a><br>
-* Will allow a user in the database*
+*Will allow a `User` to edit their specific attributes in the database*
 * Example Mutation
 ```graph
 mutation {
@@ -89,7 +89,7 @@ mutation {
 <br>
 
 <a id="delete-user">**deleteUser**</a><br>
-* Will delete a user in the database*
+*Will delete a `User` and all `items` associated with the `User` in the database*
 * Example Mutation
 ```graph
 mutation {
@@ -119,9 +119,10 @@ mutation {
 
 <br>
 
-### <a id="item">Item Mutations</a>
-<a id="create-item">**createItem**</a><br>
-*Used during item creation. Will create a new item attached to a User in the database*
+### <a id="item-m">Item Mutations</a>
+<a id="create-item">**createItem**</a>
+<br>
+*Used during `item` creation. Will create a `new item` attached to a `User` in the database*
 * Example Mutation
 ```graph
 mutation {
@@ -167,15 +168,102 @@ mutation {
         "amount": 9,
         "user": {
           "id": "1",
-          "name": "Oren Renner",
-          "email": "renner.oren@example.org"
+          "name": "Bojack Horseman",
+          "email": "bojack@example.org"
         }
       }
     }
   }
 }
-
 ```
 ---
 
 <br>
+
+<a id="edit-item">**editItem**</a> <br>
+*Used during `item` creation. Will create a `new item` attached to a `User` in the database*
+* Example Mutation
+```graph
+mutation {
+  edittem(
+    input: {
+      userId: "#{@bojack.id}"
+      name: "Plain Needles",
+      category: 0,
+      description: "Nothing Special",
+      available: 1,
+      amount: 3,
+      status: 0
+      }
+      ) {
+        item {
+          id
+          name
+          category
+          description
+          available
+          amount
+          status
+          user {
+            id
+            name
+          }
+        }
+      }
+    }
+```
+* Example Response
+```json
+{
+  "data": {
+    "editItem": {
+      "item": {
+        "id": "51",
+        "name": "Plain Needles",
+        "description": "Nothing Special",
+        "category": "Sewing/Knitting",
+        "available": "true",
+        "status": "Give",
+        "amount": 4,
+        "user": {
+          "id": "1",
+          "name": "Bojack Horseman",
+          "email": "bojack@example.org"
+        }
+      }
+    }
+  }
+}
+```
+---
+
+<br>
+
+<a id="delete-item">**deleteItem**</a><br>
+*Will delete an `item` in the database*
+* Example Mutation
+```graph
+mutation {
+  deleteItem(
+    input: {
+      id: "11"
+      }
+      ) {
+        success
+        }
+      }
+    }
+```
+* Example Response
+```json
+{
+  "data": {
+    "deleteItem": {
+      "success": {
+       true
+      }
+    }
+  }
+}
+```
+---

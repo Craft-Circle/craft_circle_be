@@ -74,20 +74,25 @@ Our GraphQL endpoints fall into two categories: queries and mutations. For detai
 
 To make live queries to the GraphQL endpoint and see live schema information, setup the back-end using the [rails setup guide](./docs/setup/rails_setup.md) and access GraphiQL at `http://localhost:5000/graphiql`.
 
-- Queries
-  - [getUsers](./docs/graphql/queries.md#get-users)
-  - [getAUser](./docs/graphql/queries.md#get-user)
-  - [getUserItems](./docs/graphql/queries.md#get-user-items)
-  - [getItems](./docs/graphql/queries.md#get-items)
-  - [itemSearch](graphql_endpoints.md#item-search)
-  - [filterByCategory](graphql_endpoints.md#filter-by-category)
-- Mutations
-  - [createUser](./docs/graphql/mutations.md#create-user)
-  - [editUser](./docs/graphql/mutations.md#edit-user)
-  - [deleteUser](./docs/graphql/mutations.md#delete-user)
-  - [createItem](./docs/graphql/mutations.md#create-pairings)
-  - [editItem](./docs/graphql/mutations.md#update-pairings)
-  - [deleteItem](./docs/graphql/mutations.md#delete-pairing)
+Queries
+- [User Queries](./docs/graphql/queries.md#user-q)
+    - [getUsers](./docs/graphql/queries.md#get-users)
+    - [getAUser](./docs/graphql/queries.md#get-user)
+    - [getUserItems](./docs/graphql/queries.md#get-user-items)
+- [Item Queries](./docs/graphql/queries.md#item-q)
+    - [getItems](./docs/graphql/queries.md#get-items)
+    - [itemSearch](graphql_endpoints.md#item-search)
+    - [filterByCategory](graphql_endpoints.md#filter-by-category)
+
+Mutations
+- [User Mutations](./docs/graphql/mutations.md#user-m)
+    - [createUser](./docs/graphql/mutations.md#create-user)
+    - [editUser](./docs/graphql/mutations.md#edit-user)
+    - [deleteUser](./docs/graphql/mutations.md#delete-user)
+- [Item Mutations](./docs/graphql/mutations.md#item-m)
+    - [createItem](./docs/graphql/mutations.md#create-item)
+    - [editItem](./docs/graphql/mutations.md#edit-item)
+    - [deleteItem](./docs/graphql/mutations.md#delete-item)
 
 ## **Contributors ✨**
 

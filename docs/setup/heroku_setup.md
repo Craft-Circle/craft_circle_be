@@ -41,7 +41,7 @@ $ heroku run rails db:{create,migrate,seed}
 <summary><b>Click to see example!</b></summary>
 <p>
 
-<a href="./docs/imgs/heroku_setup.png" title ="Heroku Database"><img src="./docs/imgs/heroku_setup.png" alt="Heroku Database"/></a>
+<a href="https://github.com/Craft-Circle/craft_circle_be/blob/68294dcf60229d5b9475500b3cb4f9d753eb0969/docs/imgs/heroku_setup.png" title ="Heroku Database"><img src="https://github.com/Craft-Circle/craft_circle_be/blob/68294dcf60229d5b9475500b3cb4f9d753eb0969/docs/imgs/heroku_setup.png" alt="Heroku Database"/></a>
 
 </p>
 </details></br>

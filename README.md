@@ -13,13 +13,14 @@
 <hr>
 
 <p align="center">
-  <a href="https://github.com/Craft-Circle"> <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="95%"/></a>
+  <a href="https://craft-circle.herokuapp.com"> <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="95%"/></a>
 </p>
 
 <hr>
 
 ## **Background and Description**
 [Craft Circle BE](https://github.com/Craft-Circle/craft_circle_be) is the "Back End" rails application API that acts as a microservice for the [Craft Circule UI](https://github.com/Craft-Circle/craft-circle-ui) web application. The database is accessed through GraphQL endpoint where a post request has acceess to queries and muations.
+- [Craft Circle App](https://craft-circle.herokuapp.com)<br>
 - [Capstone Project](https://mod4.turing.edu/projects/capstone/)<br>
 - [Figma Board](https://www.figma.com/files/team/1126568384966913890/Craft-Circle?fuid=1042180732312868322)<br>
 
@@ -30,10 +31,9 @@
 - [Requirements and Setup (for Mac):](#requirements-and-setup-for-mac)
     - [Ruby and Rails Versions](#ruby-and-rails-versions)
     - [Gems Utilized](#gems-utilized)
-    - [APIs](#apis-consumed)
     - [SetUp](#setup)
 - [Heroku Setup](#heroku-setup)
-- [Endpoints](#endpoints-provided)
+- [GraphQL Endpoints](#graphql-endpoints)
 - [Contributors](#contributors-)
 ---
 ## **Schema**

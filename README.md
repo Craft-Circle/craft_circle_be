@@ -13,7 +13,7 @@
 <hr>
 
 <p align="center">
-  <a href="https://github.com/Craft-Circle" <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="80%"/></a>
+  <a href="https://github.com/Craft-Circle"> <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="95%"/></a>
 </p>
 
 <hr>

@@ -13,13 +13,14 @@
 <hr>
 
 <p align="center">
-  <a href="https://github.com/Craft-Circle"> <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="95%"/></a>
+  <a href="https://craft-circle.herokuapp.com"> <img src="./docs/imgs/CraftCircleLogoBanner-19.png" alt="logo" width="95%"/></a>
 </p>
 
 <hr>
 
 ## **Background and Description**
 [Craft Circle BE](https://github.com/Craft-Circle/craft_circle_be) is the "Back End" rails application API that acts as a microservice for the [Craft Circule UI](https://github.com/Craft-Circle/craft-circle-ui) web application. The database is accessed through GraphQL endpoint where a post request has acceess to queries and muations.
+- [Craft Circle App](https://craft-circle.herokuapp.com)<br>
 - [Capstone Project](https://mod4.turing.edu/projects/capstone/)<br>
 - [Figma Board](https://www.figma.com/files/team/1126568384966913890/Craft-Circle?fuid=1042180732312868322)<br>
 
@@ -30,10 +31,9 @@
 - [Requirements and Setup (for Mac):](#requirements-and-setup-for-mac)
     - [Ruby and Rails Versions](#ruby-and-rails-versions)
     - [Gems Utilized](#gems-utilized)
-    - [APIs](#apis-consumed)
     - [SetUp](#setup)
 - [Heroku Setup](#heroku-setup)
-- [Endpoints](#endpoints-provided)
+- [GraphQL Endpoints](#graphql-endpoints)
 - [Contributors](#contributors-)
 ---
 ## **Schema**
@@ -53,7 +53,9 @@
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 - [faraday](https://github.com/lostisland/faraday)
 - [figaro](https://github.com/laserlemon/figaro)
-- [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer)
+- [graphql](https://graphql.org/learn/)
+- [graphql-ruby docs](https://graphql-ruby.org/guides)
+- [graphiql-rails](https://github.com/graphql/graphiql)
 - [jsonl](https://github.com/zenizh/jsonl)
 - [launchy](https://github.com/copiousfreetime/launchy)
 - [pry](https://github.com/pry/pry)
@@ -68,7 +70,29 @@ See this [Rails Setup Guide](./docs/setup/rails_setup.md) for detailed instructi
 ## **Heroku Setup**
 See this [Heroku Deployment Guide](./docs/setup/heroku_setup.md) for detailed instructions on how to deploy the app to heroku.
 ## **GraphQL Endpoints**
+Our GraphQL endpoints fall into two categories: queries and mutations. For detailed examples of all the endpoints and example responses, see our [GraphQL #Endpoints Guide](./docs/graphql) or click the specific query or mutation below to go its section.
 
+To make live queries to the GraphQL endpoint and see live schema information, setup the back-end using the [rails setup guide](./docs/setup/rails_setup.md) and access GraphiQL at `http://localhost:5000/graphiql`.
+
+Queries
+- [User Queries](./docs/graphql/queries.md#user-q)
+    - [getUsers](./docs/graphql/queries.md#get-users)
+    - [getAUser](./docs/graphql/queries.md#get-user)
+    - [getUserItems](./docs/graphql/queries.md#get-user-items)
+- [Item Queries](./docs/graphql/queries.md#item-q)
+    - [getItems](./docs/graphql/queries.md#get-items)
+    - [itemSearch](graphql_endpoints.md#item-search)
+    - [filterByCategory](graphql_endpoints.md#filter-by-category)
+
+Mutations
+- [User Mutations](./docs/graphql/mutations.md#user-m)
+    - [createUser](./docs/graphql/mutations.md#create-user)
+    - [editUser](./docs/graphql/mutations.md#edit-user)
+    - [deleteUser](./docs/graphql/mutations.md#delete-user)
+- [Item Mutations](./docs/graphql/mutations.md#item-m)
+    - [createItem](./docs/graphql/mutations.md#create-item)
+    - [editItem](./docs/graphql/mutations.md#edit-item)
+    - [deleteItem](./docs/graphql/mutations.md#delete-item)
 
 ## **Contributors ✨**
 

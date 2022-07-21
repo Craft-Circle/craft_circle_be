@@ -146,6 +146,7 @@ Use Ctrl-C to stop
 </p>
 </details></br>
 
+
 * Switch to a new tab `CMD + T` in your terminal then navigate to the front end directory with the command:
 
 ```sh
@@ -161,4 +162,17 @@ $ npm start
 * Open web browser and visit link to access the front end application
     http://localhost:3000
 
-* At this point you should be taken an index page with clickable links to different data sets with the ability to create, read, update, and delete data.
+* You may now run the front-end and open it on `localhost:3000` and it will make GraphQL queries to the Rails server at `localhost:3001/graphql`.
+
+* You can shut down either server process by entering Cmd-C in the terminal window.
+
+## Test Suite
+Run the test suite with:
+```
+bundle exec rspec
+```
+
+To access test coverage files, run:
+```
+open coverage/index.html
+```

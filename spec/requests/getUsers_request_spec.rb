@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'getUsers', type: :request do
   it 'returns all users instances' do
-    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com')
-    @pc = User.create!(name: 'Princess Caroline', email: 'pc@email.com')
+    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com', password: 'bjackhman',
+                           password_confirmation: 'bjackhman')
+    @pc = User.create!(name: 'Princess Caroline', email: 'pc@email.com', password: 'bjackhman',
+                       password_confirmation: 'bjackhman')
     query =
       <<~GQL
         query {

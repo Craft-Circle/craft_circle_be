@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'getItems', type: :request do
   it 'returns all item instances' do
-    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com')
+    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com', password: 'bjackhman',
+                           password_confirmation: 'bjackhman')
 
     yarn = Item.create!(
       name: 'Purple Yarn',

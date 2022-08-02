@@ -21,6 +21,20 @@ module Types
       User.where(email: "#{email}").first
     end
 
+    field :login_a_user, Types::UserType, null: false, description: 'Returns a user' do
+      argument :email, String, required: true
+      argument :password, String, required: true
+    end
+    def login_a_user(email:, password:)
+      user = User.where(email: "#{email}").first
+      if user.authenticate(password)
+        user
+      else
+        raise GraphQL::ExecutionError,
+              "Email or password incorrect"
+      end
+    end
+
     field :get_items, [Types::ItemType], null: false, description: 'Returns all items'
     def get_items
       Item.all

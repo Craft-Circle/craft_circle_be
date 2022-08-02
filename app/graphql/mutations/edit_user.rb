@@ -8,8 +8,6 @@ module Mutations
 
     def resolve(id:, **args)
       updated_user = User.find(id)
-      # updated_user.update!(args)
-      # updated_user.save
       if updated_user.update(args)
       { user: updated_user }
       else

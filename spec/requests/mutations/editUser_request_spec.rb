@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'editUser', type: :request do
-  xit 'edits a user' do
+  it 'edits a user' do
     test_user = User.create!(
       id: 1,
       name: 'User 1',
@@ -15,7 +15,7 @@ RSpec.describe 'editUser', type: :request do
     editer_mutation =
       <<~GQL
         mutation editUser {
-          editUser(input:{id: #{test_user.id}, $name: "Edited user name"}) {
+          editUser(input:{id: #{test_user.id}, name: "Edited user name"}) {
             user {
               name
               email

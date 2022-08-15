@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'editItem', type: :request do
   it 'creates a item' do
-    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com')
+    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com', password: 'bjackhman',
+                           password_confirmation: 'bjackhman')
     yarn = @bojack.items.create!(
       name: 'Purple Yarn',
       category: 0,

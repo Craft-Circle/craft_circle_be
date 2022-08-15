@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'getUserItems', type: :request do
   it 'returns a users items' do
-    susan = User.create!(name: 'Susan', email: 'susan@example.com')
-    joseph = User.create!(name: 'Joseph', email: 'joseph@example.com')
+    susan = User.create!(name: 'Susan', email: 'susan@example.com', password: 'bjackhman',
+                         password_confirmation: 'bjackhman')
+    joseph = User.create!(name: 'Joseph', email: 'joseph@example.com', password: 'bjackhman',
+                          password_confirmation: 'bjackhman')
 
     yarn = susan.items.create!(
       name: 'Purple Yarn',

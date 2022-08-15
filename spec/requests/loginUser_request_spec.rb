@@ -6,12 +6,13 @@ RSpec.describe 'getAUser', type: :request do
                            password_confirmation: 'bjackhman')
   end
 
-  it 'returns a user based on id' do
-    def query(email:)
+  it 'returns a user based on email and password' do
+    def query(email:, password:)
       <<~GQL
         query {
-          getAUser(
-            email: "#{@bojack.email}"
+          loginAUser(
+            email: "#{@bojack.email}",
+            password: "bjackhman"
           ) {
             id
             name
@@ -21,34 +22,34 @@ RSpec.describe 'getAUser', type: :request do
       GQL
     end
 
-    post '/graphql', params: { query: query(email: @bojack.email) }
+    post '/graphql', params: { query: query(email: @bojack.email, password: 'bjackhman') }
     json = JSON.parse(response.body, symbolize_names: true)
-    data = json[:data][:getAUser]
-
+    data = json[:data][:loginAUser]
     expect(data[:name]).to eq @bojack.name
     expect(data[:email]).to eq @bojack.email
   end
 
-  it 'returns an error if not found' do
-    def query(email:)
+  it 'returns an error if incorrect password' do
+    def query(email:, password:)
       <<~GQL
         query {
-          getAUser(
-            email: "#{email}"
-            ) {
-              id
-              name
-              email
-            }
+          loginAUser(
+            email: "#{@bojack.email}",
+            password: "incorrect"
+          ) {
+            id
+            name
+            email
           }
+        }
       GQL
     end
 
-    post '/graphql', params: { query: query(email: 'ojac') }
+    post '/graphql', params: { query: query(email: @bojack.email, password: 'incorrect') }
     json = JSON.parse(response.body, symbolize_names: true)
     data = json[:errors][0][:message]
 
-    expect(data).to eq('Cannot return null for non-nullable field Query.getAUser')
+    expect(data).to eq('Email or password incorrect')
     expect(data).to_not eq(@bojack.name)
   end
 end

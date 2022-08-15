@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'createItem', type: :request do
   it 'creates a item' do
-    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com')
+    @bojack = User.create!(name: 'Bojack Horseman', email: 'bjackhman@email.com', password: 'bjackhman',
+                           password_confirmation: 'bjackhman')
     create_item_mutation =
       <<~GQL
         mutation createItem {
